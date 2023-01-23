@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .cards {
+        width: 800px;
+        height: 800px;
+        margin: auto;
+        background-color: lightgoldenrodyellow;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+    }
+    .card {
+        width: 600px;
+        height: 80%;
+        background-color: rgb(0, 255, 179);
+        position: absolute;
+        display: grid;
+        place-content: center;
+        transition: all .5s;
+        font-size: 3rem;
+        text-transform: capitalize;
+    }
+    $list : (2, 3, 4);
+    @each $card in $list {
+        .card:nth-child(#{$card}) {
+            transform: translateX(10000px);
+        }
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        margin: 3rem;
+        border: none;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        background-color: #333;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .btn1, 
+    .btn2 {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+    }
+    .btn1 {
+        border-top: 5px solid whitesmoke;
+        border-left: 5px solid whitesmoke;
+        transform: rotate(-45deg);
+    }
+    .btn2 {
+        border-top: 5px solid whitesmoke;
+        border-right: 5px solid whitesmoke;
+        transform: rotate(45deg);
+    }
+    #btnLeft {
+        opacity: 0;
+    }
+
+}
